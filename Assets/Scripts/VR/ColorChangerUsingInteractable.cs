@@ -11,7 +11,6 @@ public class ColorChangerUsingInteractable : AbstractInteractable
         base.Start();
     }
     */
-    
 
     public override void OnPointerClick()
     {
@@ -26,5 +25,10 @@ public class ColorChangerUsingInteractable : AbstractInteractable
     public override void OnPointerExit()
     {
         this.gameObject.GetComponent<Renderer>().material.color = Color.white;
+    }
+
+    public override void HaSidoMirado()
+    {
+        this.gameObject.GetComponent<Renderer>().material.color = Color.green;
     }
 }
