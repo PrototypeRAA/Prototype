@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movimiento : MonoBehaviour
 {
-    // Start is called before the first frame update
     public int playerSpeed;
+    public float gravityForce;
     private bool isMoving;
     void Start()
     {
