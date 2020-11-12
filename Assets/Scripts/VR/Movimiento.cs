@@ -5,7 +5,6 @@ using UnityEngine;
 public class Movimiento : MonoBehaviour
 {
     public int playerSpeed;
-    public float gravityForce;
     private bool isMoving;
     void Start()
     {
@@ -22,7 +21,6 @@ public class Movimiento : MonoBehaviour
             float valueZAxis = Camera.main.transform.forward.z * Time.deltaTime * playerSpeed;
             //Movemos al jugador sin cambios en la altura
             transform.Translate(valueXAxis, 0f, valueZAxis);
-            Debug.Log("Altura: " + transform.position.y);
         } else if(Input.GetButton("Fire1") && !isMoving){
             isMoving = true;
         }else if (Input.GetButton("Fire1") && isMoving){
