@@ -18,7 +18,7 @@ public class InventarioScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        segundosEspera = 4f;
+        segundosEspera = 2.5f;
     }
 
     // Update is called once per frame
@@ -29,7 +29,9 @@ public class InventarioScript : MonoBehaviour
 
     async void ActivarCuenta(){
         await Task.Delay(4000);
+        if(textoInventario != null){
         textoInventario.text = "";
+        }
         inventarioBloqueado = false;
     }
 

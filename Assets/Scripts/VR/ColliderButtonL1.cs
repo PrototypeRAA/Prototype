@@ -35,7 +35,12 @@ public class ColliderButtonL1 : AbstractInteractable
 
     public override void HaSidoMirado()
     {
-        Debug.Log("Botón activado");
-        this.gameObject.GetComponent<Renderer>().material.color = Color.green;
+        InventarioScript inventario = player.GetComponent<InventarioScript>();
+        if(inventario.objetoEnInventario != null){
+            GameObject cuboInventario = inventario.objetoEnInventario;
+            GameObject copiaCubo = Instantiate(cuboInventario);
+            copiaCubo.transform.position = new Vector3(objetoMirado.transform.position.x, objetoMirado.transform.position.y+2, objetoMirado.transform.position.z);
+        }
+
     }
 }

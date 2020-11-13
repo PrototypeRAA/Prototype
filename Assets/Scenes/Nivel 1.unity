@@ -4448,6 +4448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   objetoMirado: {fileID: 919132148708434030}
+  inventarioVacio: 0
 --- !u!114 &247834502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14406,6 +14407,7 @@ MonoBehaviour:
   objetoEnInventario: {fileID: 0}
   textoInventario: {fileID: 483783170}
   segundosEspera: 0
+  inventarioBloqueado: 0
 --- !u!1001 &753135268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27043,6 +27045,7 @@ MonoBehaviour:
   objetoEnInventario: {fileID: 0}
   textoInventario: {fileID: 0}
   segundosEspera: 0
+  inventarioBloqueado: 0
 --- !u!4 &1380161641
 Transform:
   m_ObjectHideFlags: 0
@@ -39960,6 +39963,7 @@ GameObject:
   - component: {fileID: 919132148708434034}
   - component: {fileID: 919132148708434033}
   - component: {fileID: 919132148708434032}
+  - component: {fileID: 919132148708434035}
   m_Layer: 0
   m_Name: LowPolyBox
   m_TagString: ObjectToPick
@@ -40036,6 +40040,22 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!54 &919132148708434035
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148708434030}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!23 &1711813856391053755
 MeshRenderer:
   m_ObjectHideFlags: 0
