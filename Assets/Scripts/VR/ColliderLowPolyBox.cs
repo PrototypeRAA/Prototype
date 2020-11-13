@@ -32,7 +32,6 @@ public class ColliderLowPolyBox : AbstractInteractable
 
     public override void HaSidoMirado()
     {
-        Debug.Log("Límite de tiempo alcanzado");
         InventarioScript inventario = player.inventario;
         player.inventario.NuevoObjetoEnInventario(objetoMirado);
         Debug.Log("Nuevo objeto añadido al inventario");
