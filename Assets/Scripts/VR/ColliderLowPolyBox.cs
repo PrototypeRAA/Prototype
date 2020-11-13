@@ -9,6 +9,8 @@ public class ColliderLowPolyBox : AbstractInteractable
 
     public GameObject objetoMirado;
 
+    public bool inventarioVacio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,5 @@ public class ColliderLowPolyBox : AbstractInteractable
     {
         InventarioScript inventario = player.GetComponent<InventarioScript>();
         inventario.NuevoObjetoEnInventario(objetoMirado);
-        Debug.Log("Nuevo objeto añadido al inventario");
     }
 }
