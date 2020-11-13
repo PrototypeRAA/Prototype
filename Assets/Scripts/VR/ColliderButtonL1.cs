@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderLowPolyBox : AbstractInteractable
+public class ColliderButtonL1 : AbstractInteractable
 {
-
+   
     public GameObject player; 
 
     public GameObject objetoMirado;
@@ -23,18 +23,19 @@ public class ColliderLowPolyBox : AbstractInteractable
     }
 
     public override void OnPointerEnter(){
-        Debug.Log("Entrada al cubo");
+        Debug.Log("Entrada al botón");
+        this.gameObject.GetComponent<Renderer>().material.color = Color.blue;
     }
 
     public override void OnPointerExit()
     {
-        Debug.Log("Salida del cubo");
+        Debug.Log("Salida del botón");
+        this.gameObject.GetComponent<Renderer>().material.color = Color.red;
     }
 
     public override void HaSidoMirado()
     {
-        InventarioScript inventario = player.GetComponent<InventarioScript>();
-        inventario.NuevoObjetoEnInventario(objetoMirado);
-        Debug.Log("Nuevo objeto añadido al inventario");
+        Debug.Log("Botón activado");
+        this.gameObject.GetComponent<Renderer>().material.color = Color.green;
     }
 }

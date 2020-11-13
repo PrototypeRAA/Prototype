@@ -21,6 +21,7 @@ public class InventarioScript : MonoBehaviour
     public void NuevoObjetoEnInventario(GameObject objetoParaInventario){
         if(Object.ReferenceEquals(objetoEnInventario,null)){
             objetoEnInventario = objetoParaInventario;
+            Debug.Log(objetoParaInventario);
             Debug.Log("Objeto añadido al inventario");
         }else{
             Debug.Log("Inventario lleno");

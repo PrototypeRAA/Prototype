@@ -7,7 +7,7 @@ public class ColorChangeLowPoly : AbstractInteractable
 
     public override void OnPointerEnter()
     {
-        this.gameObject.GetComponent<Renderer>().material.color = Color.red;
+        this.gameObject.GetComponent<Renderer>().material.color = Color.blue;
     }
 
     public override void OnPointerExit()
