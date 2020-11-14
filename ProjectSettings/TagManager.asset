@@ -9,6 +9,7 @@ TagManager:
   - PuertaL1
   - ObjectInButton
   - ButtonLevel2
+  - ObjectToPickL2
   layers:
   - Default
   - TransparentFX

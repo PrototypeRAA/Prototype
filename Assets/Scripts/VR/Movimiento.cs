@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movimiento : MonoBehaviour
 {
     public int playerSpeed;
-    private bool isMoving;
+    public bool isMoving;
     void Start()
     {
         isMoving = false;

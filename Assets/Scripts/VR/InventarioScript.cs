@@ -21,11 +21,6 @@ public class InventarioScript : MonoBehaviour
         segundosEspera = 2.5f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public async void ActivarCuenta(){
         Task waitToDeleteText =  Task.Delay((int)segundosEspera * 1000);
@@ -34,7 +29,6 @@ public class InventarioScript : MonoBehaviour
         textoInventario.text = "";
         }
         inventarioBloqueado = false;
-        Debug.Log("ya fuera");
     }
 
     public void CambiarTexto(String nuevoTexto){
@@ -47,11 +41,8 @@ public class InventarioScript : MonoBehaviour
         if(!inventarioBloqueado){
         if(objetoEnInventario == null){
             objetoEnInventario = objetoParaInventario;
-            Debug.Log(objetoParaInventario);
-            Debug.Log("Objeto añadido al inventario");
             CambiarTexto("Objeto añadido al inventario");
         }else{
-            Debug.Log("Inventario lleno");
             CambiarTexto("Inventario lleno");
         }
         }

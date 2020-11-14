@@ -10,18 +10,14 @@ public class ColliderButtonL1 : AbstractInteractable
 
     public GameObject objetoMirado;
 
-    public GameObject puerta;
+    public GameObject puertaNivel1;
 
-    // Start is called before the first frame update
     void Start()
     {
         base.Start();
         player = GameObject.FindWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {}
 
     public override void OnPointerEnter(){
         Debug.Log("Entrada al botón");
@@ -61,11 +57,11 @@ public class ColliderButtonL1 : AbstractInteractable
             //Abrir nivel 2 y vaciar inventario
             inventario.CambiarTexto("Nivel 1 superado!");
             inventario.objetoEnInventario = null;
-            AbrirPuerta();
+            AbrirPuertaNivel1();
         }
     }
 
-    private void AbrirPuerta(){
-        puerta.transform.Rotate(0, 0, 90);
+    private void AbrirPuertaNivel1(){
+        puertaNivel1.transform.Rotate(0, 0, 90);
     }
 }
