@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ObjectToPick
   - TextoUI
+  - PuertaL1
   layers:
   - Default
   - TransparentFX

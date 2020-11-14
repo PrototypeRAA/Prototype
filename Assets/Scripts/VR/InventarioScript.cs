@@ -27,12 +27,20 @@ public class InventarioScript : MonoBehaviour
         
     }
 
-    async void ActivarCuenta(){
-        await Task.Delay(4000);
+    public async void ActivarCuenta(){
+        Task waitToDeleteText =  Task.Delay((int)segundosEspera * 1000);
+        await waitToDeleteText;
         if(textoInventario != null){
         textoInventario.text = "";
         }
         inventarioBloqueado = false;
+        Debug.Log("ya fuera");
+    }
+
+    public void CambiarTexto(String nuevoTexto){
+        textoInventario.text = nuevoTexto;
+        inventarioBloqueado = true;
+        ActivarCuenta();
     }
 
     public void NuevoObjetoEnInventario(GameObject objetoParaInventario){
@@ -41,13 +49,11 @@ public class InventarioScript : MonoBehaviour
             objetoEnInventario = objetoParaInventario;
             Debug.Log(objetoParaInventario);
             Debug.Log("Objeto añadido al inventario");
-            textoInventario.text = "Objeto añadido al inventario";
+            CambiarTexto("Objeto añadido al inventario");
         }else{
             Debug.Log("Inventario lleno");
-            textoInventario.text = "Inventario lleno";
+            CambiarTexto("Inventario lleno");
         }
-        inventarioBloqueado = true;
-        ActivarCuenta();
         }
     }
 }
