@@ -5,7 +5,7 @@ using UnityEngine;
 public class ColliderLowPolyBox : AbstractInteractable
 {
 
-    public GameObject player; 
+    private GameObject player; 
 
     public GameObject objetoMirado;
 

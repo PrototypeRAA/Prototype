@@ -8,6 +8,7 @@ TagManager:
   - TextoUI
   - PuertaL1
   - ObjectInButton
+  - ButtonLevel2
   layers:
   - Default
   - TransparentFX
