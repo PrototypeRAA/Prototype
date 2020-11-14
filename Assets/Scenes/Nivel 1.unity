@@ -3673,6 +3673,14 @@ PrefabInstance:
       propertyPath: raycastMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 723926960, guid: 60270cf52a5e94998a5a335989159738, type: 3}
+      propertyPath: reticleSegments
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 723926960, guid: 60270cf52a5e94998a5a335989159738, type: 3}
+      propertyPath: maxReticleDistance
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60270cf52a5e94998a5a335989159738, type: 3}
 --- !u!4 &182665742 stripped
@@ -21622,7 +21630,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134963197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 9.44}
+  m_LocalPosition: {x: 0, y: 0, z: 7.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -21630,7 +21638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.37, y: -1.6}
+  m_AnchoredPosition: {x: 3.16, y: -1.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1139594003
@@ -39928,7 +39936,6 @@ GameObject:
   - component: {fileID: 247834503}
   - component: {fileID: 919132148708434034}
   - component: {fileID: 919132148708434033}
-  - component: {fileID: 919132148708434032}
   - component: {fileID: 919132148708434035}
   m_Layer: 0
   m_Name: LowPolyBox
@@ -39956,18 +39963,6 @@ RectTransform:
   m_AnchoredPosition: {x: -3.29, y: -2.8295124}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &919132148708434032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148708434030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feffd8f186b2f447294b32ea2d6aa790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &919132148708434033
 MonoBehaviour:
   m_ObjectHideFlags: 0
