@@ -55,15 +55,17 @@ public class ColliderButtonL1 : AbstractInteractable
 
     public void OnTriggerEnter(Collider col){
         //Comprobar la tag del objeto con el que ha colisionado
-        if(col.tag == "ObjectToPick"){
+        if(col.tag == "ObjectInButton"){
             this.gameObject.GetComponent<Renderer>().material.color = Color.green;
             InventarioScript inventario = player.GetComponent<InventarioScript>();
+            //Abrir nivel 2 y vaciar inventario
             inventario.CambiarTexto("Nivel 1 superado!");
-            AbrirNivel2();
+            inventario.objetoEnInventario = null;
+            AbrirPuerta();
         }
     }
 
-    private void AbrirNivel2(){
-        Destroy(puerta);
+    private void AbrirPuerta(){
+        puerta.transform.Rotate(0, 0, 90);
     }
 }
