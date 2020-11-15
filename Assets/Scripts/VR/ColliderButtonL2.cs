@@ -22,13 +22,16 @@ public class ColliderButtonL2 : AbstractInteractable
 
     public override void OnPointerEnter(){
         Debug.Log("Entrada al botón");
+        if(!activado){
         this.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        }
     }
     public override void OnPointerExit()
     {
         Debug.Log("Salida del botón");
+        if(!activado){
         this.gameObject.GetComponent<Renderer>().material.color = Color.red;
-
+        }
     }
 
     public void OnTriggerEnter(Collider col){
@@ -46,6 +49,9 @@ public class ColliderButtonL2 : AbstractInteractable
                 InventarioScript inventario = player.GetComponent<InventarioScript>();
                 //Abrir nivel 2 y vaciar inventario
                 inventario.CambiarTexto("Nivel 2 superado!");
+                player.transform.position = new Vector3(objetoMirado.transform.position.x, objetoMirado.transform.position.y+3, objetoMirado.transform.position.z);
+                this.gameObject.GetComponent<Renderer>().material.color = Color.green;
+                activado = true;
                 AbrirPuertaNivel2();
             }
         }

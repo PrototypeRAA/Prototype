@@ -12,16 +12,21 @@ public class ColliderButtonL1 : AbstractInteractable
 
     public GameObject puertaNivel1;
 
+    private bool finalizado;
+
     void Start()
     {
         base.Start();
         player = GameObject.FindWithTag("Player");
+        finalizado = false;
     }
 
 
     public override void OnPointerEnter(){
         Debug.Log("Entrada al botón");
+        if(!finalizado){
         this.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        }
     }
 
     public override void OnPointerExit()
@@ -53,6 +58,7 @@ public class ColliderButtonL1 : AbstractInteractable
         //Comprobar la tag del objeto con el que ha colisionado
         if(col.tag == "ObjectInButton"){
             this.gameObject.GetComponent<Renderer>().material.color = Color.green;
+            finalizado = true;
             InventarioScript inventario = player.GetComponent<InventarioScript>();
             //Abrir nivel 2 y vaciar inventario
             inventario.CambiarTexto("Nivel 1 superado!");
