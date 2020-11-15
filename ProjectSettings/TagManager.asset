@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ObjectToPick
+  - TextoUI
+  - PuertaL1
+  - ObjectInButton
+  - ButtonLevel2
+  - ObjectToPickL2
   layers:
   - Default
   - TransparentFX
