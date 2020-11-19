@@ -1,15 +1,16 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     public Animator animator;
 
     // Nombre del Interlocutor
-    public Text nameText;
+    public TMP_Text nameText;
     // Sitio donde se escribe el diálogo
-    public Text dialogueText;
+    public TMP_Text dialogueText;
 
     public Vector3? PathsDisplayPosition { get; private set; }
     public DialogueTree CurrentDialogueTree { get; private set; }
@@ -36,6 +37,8 @@ public class DialogueManager : MonoBehaviour
 
     private void DialogueUpdate()
     {
+        nameText.text = "Ordenador";
+
         // Muestra el diálogo actual en pantalla
         dialogueText.text = CurrentDialogue.Text;
 
