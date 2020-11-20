@@ -14,6 +14,11 @@ public class Dialogue
     public string Text { get; private set; }
     public List<DialoguePath> Options { get; private set; } = new List<DialoguePath>();
 
+
+    /// Default Option goes to no dialogue => Ends conversation
+    private bool IsDefaultOptionIncluded = true;
+    private DialoguePath DefaultOption = new DialoguePath("default", null);
+
     //
     // Constructors
     //
@@ -21,6 +26,7 @@ public class Dialogue
     public Dialogue(string text)
     {
         this.Text = text;
+        Options.Add(DefaultOption);
     }
 
     public Dialogue(string text, string speaker) : this(text)
@@ -36,6 +42,7 @@ public class Dialogue
     public Dialogue(string text, List<DialoguePath> options) : this(text)
     {
         Options = new List<DialoguePath>(options);
+        IsDefaultOptionIncluded = false;
     }
 
     //
@@ -44,6 +51,7 @@ public class Dialogue
 
     public void AddOption(DialoguePath option)
     {
+        if (IsDefaultOptionIncluded) IsDefaultOptionIncluded = !Options.Remove(DefaultOption); // Erase default option, no needed if we have one option
         Options.Add(option);
     }
 
