@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -39,8 +40,10 @@ public class DialogueManager : MonoBehaviour
 
     private void DialogueUpdate()
     {
+        // Update picture and speaker name
         characterPic.sprite = CurrentDialogue.Sprite; //Resources.Load<Sprite>("Sprites/UI/Dialogue/pc_icon");
-        nameText.text = CurrentDialogue.Speaker;
+        if ( !nameText.text.Equals(CurrentDialogue.Speaker) )
+            StartCoroutine( RevealWords(nameText, CurrentDialogue.Speaker) );
 
         // Muestra el diálogo actual en pantalla
         dialogueText.text = CurrentDialogue.Text;
@@ -52,5 +55,22 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue(){
         animator.SetBool("isOpen", false);
+    }
+
+    IEnumerator RevealWords(TMP_Text textComponent, string text)
+    {
+        int totalChars = text.Length;
+        System.Text.StringBuilder b = new System.Text.StringBuilder();
+
+        int i = 0;
+        while (i < totalChars)
+        {
+            b.Append(text[i]);
+
+            textComponent.text = b.ToString();
+
+            i++;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 }
