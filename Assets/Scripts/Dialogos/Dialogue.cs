@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Dialogue
 {
     public Action OnNodeArrival;
     public Action OnNodeLeave;
 
+
+    public string Speaker { get; set; }
+    public Sprite Sprite { get; set; }
     public string Text { get; private set; }
     public List<DialoguePath> Options { get; private set; } = new List<DialoguePath>();
 
@@ -17,6 +21,16 @@ public class Dialogue
     public Dialogue(string text)
     {
         this.Text = text;
+    }
+
+    public Dialogue(string text, string speaker) : this(text)
+    {
+        this.Speaker = speaker;
+    }
+
+    public Dialogue(string text, string speaker, Sprite sprite) : this(text, speaker)
+    {
+        this.Sprite = sprite;
     }
 
     public Dialogue(string text, List<DialoguePath> options) : this(text)

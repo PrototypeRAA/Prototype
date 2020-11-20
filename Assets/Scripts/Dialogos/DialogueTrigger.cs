@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DialogueTrigger : AbstractInteractable
 {
-
     public DialogueTree Tree;
     DialogueManager manager;
 
@@ -15,12 +14,13 @@ public class DialogueTrigger : AbstractInteractable
 
         // Dialogo de prueba
         Tree = new DialogueTree();
+        Sprite pic = Resources.Load<Sprite>("Sprites/UI/Dialogue/pc_icon");
 
-        Dialogue Root = new Dialogue("La raíz");
+        Dialogue Root = new Dialogue("La raíz", "Ordenador", pic);
 
-        Dialogue DialogoOpcion1 = new Dialogue("Estás en el diálogo 1");
-        Dialogue DialogoOpcion2 = new Dialogue("Estás en el diálogo 2");
-        Dialogue DialogoOpcion3 = new Dialogue("Estás en el diálogo 3");
+        Dialogue DialogoOpcion1 = new Dialogue("Estás en el diálogo 1", "Speaker1", pic);
+        Dialogue DialogoOpcion2 = new Dialogue("Estás en el diálogo 2", "Speaker1", pic);
+        Dialogue DialogoOpcion3 = new Dialogue("Estás en el diálogo 3", "Ordenador", pic);
 
         Root.AddOption(new DialoguePath("Ir a 1", DialogoOpcion1) );
         Root.AddOption(new DialoguePath("Ir a 2", DialogoOpcion2) );

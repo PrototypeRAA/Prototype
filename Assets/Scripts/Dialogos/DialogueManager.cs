@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     // Nombre del Interlocutor
+    public Image characterPic;
+    // Nombre del Interlocutor
     public TMP_Text nameText;
     // Sitio donde se escribe el diálogo
     public TMP_Text dialogueText;
@@ -37,7 +39,8 @@ public class DialogueManager : MonoBehaviour
 
     private void DialogueUpdate()
     {
-        nameText.text = "Ordenador";
+        characterPic.sprite = CurrentDialogue.Sprite; //Resources.Load<Sprite>("Sprites/UI/Dialogue/pc_icon");
+        nameText.text = CurrentDialogue.Speaker;
 
         // Muestra el diálogo actual en pantalla
         dialogueText.text = CurrentDialogue.Text;
