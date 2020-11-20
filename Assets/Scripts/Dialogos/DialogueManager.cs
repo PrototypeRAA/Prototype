@@ -40,6 +40,12 @@ public class DialogueManager : MonoBehaviour
 
     private void DialogueUpdate()
     {
+        // Is this the last dialogue
+        if (CurrentDialogue == null) {
+            EndDialogue();
+            return;
+        }
+
         // Update picture and speaker name
         characterPic.sprite = CurrentDialogue.Sprite; //Resources.Load<Sprite>("Sprites/UI/Dialogue/pc_icon");
         if ( !nameText.text.Equals(CurrentDialogue.Speaker) )
@@ -51,11 +57,18 @@ public class DialogueManager : MonoBehaviour
         // TODO, enviar diálogo a un objeto que muestre las opciones de este, ejemlo: 
         // ImprimirEnPantallaPaths(Dialogue CurrentDialogue, Vector3 PathsDisplayPosition) - Nota, el segundo attributo determina en torno a donde se muestran las opciones
         // throw new NotImplementedException();
-    }
 
+
+        // Comprobamos si se tiene que actualizar sola la caja de diálogos
+        CheckForAutoUpdate();
+    }
+    
     public void EndDialogue(){
         animator.SetBool("isOpen", false);
     }
+
+
+
 
     IEnumerator RevealWords(TMP_Text textComponent, string text)
     {
@@ -72,5 +85,20 @@ public class DialogueManager : MonoBehaviour
             i++;
             yield return new WaitForSeconds(0.05f);
         }
+    }
+
+    private void CheckForAutoUpdate()
+    {
+        if (CurrentDialogue.Options.Count < 2)
+        { // Auto choose next option
+            float timeBeforeSkip = 2f;
+            Invoke("AutoChooseOption", timeBeforeSkip);
+        }
+    }
+
+    private void AutoChooseOption()
+    {
+        int choiceIndex = UnityEngine.Random.Range(0, CurrentDialogue.Options.Count - 1);
+        this.PathTaken( CurrentDialogue.Options[choiceIndex] );
     }
 }

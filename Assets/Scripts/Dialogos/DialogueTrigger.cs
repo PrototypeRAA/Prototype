@@ -18,15 +18,15 @@ public class DialogueTrigger : AbstractInteractable
 
         Dialogue Root = new Dialogue("La raíz", "Ordenador", pic);
 
-        Dialogue DialogoOpcion1 = new Dialogue("Estás en el diálogo 1", "Speaker1", pic);
-        Dialogue DialogoOpcion2 = new Dialogue("Estás en el diálogo 2", "Speaker1", pic);
+        Dialogue DialogoOpcion1 = new Dialogue("Estás en el diálogo 1", "Ordenador", pic);
+        Dialogue DialogoOpcion2 = new Dialogue("Estás en el diálogo 2", "Ordenador", pic);
         Dialogue DialogoOpcion3 = new Dialogue("Estás en el diálogo 3", "Ordenador", pic);
 
         Root.AddOption(new DialoguePath("Ir a 1", DialogoOpcion1) );
-        Root.AddOption(new DialoguePath("Ir a 2", DialogoOpcion2) );
+        //Root.AddOption(new DialoguePath("Ir a 2", DialogoOpcion2) );
         DialogoOpcion1.AddOption(new DialoguePath("Ir a 3 desde 1", DialogoOpcion3) );
         DialogoOpcion2.AddOption(new DialoguePath("Ir a 3 desde 2", DialogoOpcion3) );
-
+        
         Tree.AddDialogue(Root);
         Tree.AddDialogue(DialogoOpcion1);
         Tree.AddDialogue(DialogoOpcion2);
@@ -35,9 +35,9 @@ public class DialogueTrigger : AbstractInteractable
     
     public override void HaSidoMirado(){
         manager.StartDialogue(Tree);
-        StartCoroutine(PruebaInteraccion());
     }
 
+    /*
     IEnumerator PruebaInteraccion()
     {
         yield return new WaitForSeconds(2f);
@@ -53,4 +53,5 @@ public class DialogueTrigger : AbstractInteractable
         yield return new WaitForSeconds(2f);
         manager.EndDialogue();
     }
+    */
 }
