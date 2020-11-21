@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -80,6 +80,7 @@ public abstract class AbstractInteractable : MonoBehaviour
     public virtual void OnPointerClick() { }
 
     // Llamado cuando el jugador empieza a mirar el objeto
+<<<<<<< HEAD
     public virtual void OnPointerEnter(){}
 
     // Llamado cuando el jugador deja de mirar el objeto
@@ -87,4 +88,13 @@ public abstract class AbstractInteractable : MonoBehaviour
 
     // Llamado cuando el objeto ha sido mirado durante LookDuration segundos
     public virtual void HaSidoMirado(){}
+=======
+    public virtual void OnPointerEnter() { }
+
+    // Llamado cuando el jugador deja de mirar el objeto
+    public virtual void OnPointerExit() { }
+
+    // Llamado cuando el objeto ha sido mirado durante LookDuration segundos
+    public virtual void HaSidoMirado() { }
+>>>>>>> master
 }
