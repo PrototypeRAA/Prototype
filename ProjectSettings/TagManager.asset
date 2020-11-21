@@ -10,6 +10,7 @@ TagManager:
   - ObjectInButton
   - ButtonLevel2
   - ObjectToPickL2
+  - Spring
   layers:
   - Default
   - TransparentFX

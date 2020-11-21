@@ -11,9 +11,4 @@ public class PlayerScript : MonoBehaviour
         inventario = (InventarioScript) FindObjectOfType(typeof(InventarioScript));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
