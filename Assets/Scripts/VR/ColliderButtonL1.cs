@@ -14,6 +14,8 @@ public class ColliderButtonL1 : AbstractInteractable
 
     private bool finalizado;
 
+    public AudioSource audioPuerta;
+
     void Start()
     {
         base.Start();
@@ -69,5 +71,6 @@ public class ColliderButtonL1 : AbstractInteractable
 
     private void AbrirPuertaNivel1(){
         puertaNivel1.transform.Rotate(0, 0, 90);
+        audioPuerta.Play();
     }
 }
