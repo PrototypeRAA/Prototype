@@ -14,15 +14,22 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text nameText;
     // Sitio donde se escribe el diálogo
     public TMP_Text dialogueText;
+    // Prefab de la opcion
+    public GameObject prefab;
 
-    public Vector3? PathsDisplayPosition { get; private set; }
+    public GameObject prefabAccumulator;
+
+    GameObject[] list = new GameObject[4];
+
+    public Vector3 PathsDisplayPosition { get; private set; }
     public DialogueTree CurrentDialogueTree { get; private set; }
     public Dialogue CurrentDialogue { get; private set; }
-    
+
 
     // Comienza el diálogo "dialogueTree", mostrando en pantalla su texto y mostrando en "OptionsPosition" las opciones
-    public void StartDialogue(DialogueTree dialogueTree, Vector3? pathsDisplayPosition = null)
+    public void StartDialogue(DialogueTree dialogueTree, Vector3 pathsDisplayPosition)
     {
+        if(animator.GetBool("isOpen")) return;
         animator.SetBool("isOpen", true);
         CurrentDialogueTree = dialogueTree;
         PathsDisplayPosition = pathsDisplayPosition;
@@ -35,6 +42,7 @@ public class DialogueManager : MonoBehaviour
     public void PathTaken(DialoguePath path)
     {
         CurrentDialogue = CurrentDialogue.TakePath(path);
+        ErasePaths();
         DialogueUpdate();
     }
 
@@ -55,7 +63,8 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = CurrentDialogue.Text;
 
         // TODO, enviar diálogo a un objeto que muestre las opciones de este, ejemlo: 
-        // ImprimirEnPantallaPaths(Dialogue CurrentDialogue, Vector3 PathsDisplayPosition) - Nota, el segundo attributo determina en torno a donde se muestran las opciones
+        if (CurrentDialogue.Options.Count >= 2)
+            ImprimirEnPantallaPaths(CurrentDialogue, PathsDisplayPosition); // - Nota, el segundo attributo determina en torno a donde se muestran las opciones
         // throw new NotImplementedException();
 
 
@@ -67,8 +76,32 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", false);
     }
 
+    public void ImprimirEnPantallaPaths(Dialogue CurrentDialogue, Vector3 PathsDisplayPosition){
+        var y = 1;
+        int i=0;
+        foreach (DialoguePath path in CurrentDialogue.Options)
+        {
+            Vector3 tempTrans = PathsDisplayPosition;
+            tempTrans += Vector3.right * 5f;
+            tempTrans += Vector3.up * y;
+            GameObject g = Instantiate(prefab, tempTrans, prefab.transform.rotation);
+            g.transform.Find("OptionText").GetComponent<TextMeshPro>().text = path.OptionName;
+            g.AddComponent<OptionTrigger>();
+            g.GetComponent<OptionTrigger>().path = path;
+            g.GetComponent<OptionTrigger>().manager = this;
+            list[i] = g;
+            i++;
+            y -= 1;
+        }
+    }
 
-
+    public void ErasePaths(){
+        for (int i=0;i<list.Length;i++)
+        {
+            if (list[i] != null)
+                Destroy(list[i]);
+        }
+    }
 
     IEnumerator RevealWords(TMP_Text textComponent, string text)
     {

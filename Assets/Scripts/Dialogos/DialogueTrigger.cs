@@ -23,7 +23,7 @@ public class DialogueTrigger : AbstractInteractable
         Dialogue DialogoOpcion3 = new Dialogue("Estás en el diálogo 3", "Ordenador", pic);
 
         Root.AddOption(new DialoguePath("Ir a 1", DialogoOpcion1) );
-        //Root.AddOption(new DialoguePath("Ir a 2", DialogoOpcion2) );
+        Root.AddOption(new DialoguePath("Ir a 2", DialogoOpcion2) );
         DialogoOpcion1.AddOption(new DialoguePath("Ir a 3 desde 1", DialogoOpcion3) );
         DialogoOpcion2.AddOption(new DialoguePath("Ir a 3 desde 2", DialogoOpcion3) );
         
@@ -34,7 +34,7 @@ public class DialogueTrigger : AbstractInteractable
     }
     
     public override void HaSidoMirado(){
-        manager.StartDialogue(Tree);
+        manager.StartDialogue(Tree, transform.position);
     }
 
     /*
