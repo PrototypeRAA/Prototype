@@ -8,8 +8,7 @@ public class OptionTrigger : AbstractInteractable
     public DialogueManager manager;
 
     public override void HaSidoMirado(){
-        float timeBeforeSkip = 2f;
-        Invoke("TakeThePath", timeBeforeSkip);
+        TakeThePath();
     }
 
     public void TakeThePath(){

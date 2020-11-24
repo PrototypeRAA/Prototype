@@ -17,9 +17,7 @@ public class DialogueManager : MonoBehaviour
     // Prefab de la opcion
     public GameObject prefab;
 
-    public GameObject prefabAccumulator;
-
-    GameObject[] list = new GameObject[4];
+    GameObject[] listOfOptions;
 
     public Vector3 PathsDisplayPosition { get; private set; }
     public DialogueTree CurrentDialogueTree { get; private set; }
@@ -62,10 +60,9 @@ public class DialogueManager : MonoBehaviour
         // Muestra el diálogo actual en pantalla
         dialogueText.text = CurrentDialogue.Text;
 
-        // TODO, enviar diálogo a un objeto que muestre las opciones de este, ejemlo: 
+        // Mostrar las opciones del diálogo
         if (CurrentDialogue.Options.Count >= 2)
-            ImprimirEnPantallaPaths(CurrentDialogue, PathsDisplayPosition); // - Nota, el segundo attributo determina en torno a donde se muestran las opciones
-        // throw new NotImplementedException();
+            ImprimirEnPantallaPaths(CurrentDialogue, PathsDisplayPosition, Vector3.left * 90);
 
 
         // Comprobamos si se tiene que actualizar sola la caja de diálogos
@@ -76,30 +73,32 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", false);
     }
 
-    public void ImprimirEnPantallaPaths(Dialogue CurrentDialogue, Vector3 PathsDisplayPosition){
+    public void ImprimirEnPantallaPaths(Dialogue dialogue, Vector3 pathsPosition, Vector3 pathsRotation){
+        listOfOptions = new GameObject[dialogue.Options.Count];
+
         var y = 1;
         int i=0;
-        foreach (DialoguePath path in CurrentDialogue.Options)
+        foreach (DialoguePath path in dialogue.Options)
         {
-            Vector3 tempTrans = PathsDisplayPosition;
+            Vector3 tempTrans = pathsPosition;
             tempTrans += Vector3.right * 5f;
             tempTrans += Vector3.up * y;
-            GameObject g = Instantiate(prefab, tempTrans, prefab.transform.rotation);
+            GameObject g = Instantiate(prefab, tempTrans, Quaternion.Euler(pathsRotation.x, pathsRotation.y, pathsRotation.z));
             g.transform.Find("OptionText").GetComponent<TextMeshPro>().text = path.OptionName;
             g.AddComponent<OptionTrigger>();
             g.GetComponent<OptionTrigger>().path = path;
             g.GetComponent<OptionTrigger>().manager = this;
-            list[i] = g;
+            listOfOptions[i] = g;
             i++;
             y -= 1;
         }
     }
 
     public void ErasePaths(){
-        for (int i=0;i<list.Length;i++)
+        for (int i=0;i<listOfOptions.Length;i++)
         {
-            if (list[i] != null)
-                Destroy(list[i]);
+            if (listOfOptions[i] != null)
+                Destroy(listOfOptions[i]);
         }
     }
 
