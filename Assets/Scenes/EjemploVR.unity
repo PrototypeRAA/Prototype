@@ -1418,7 +1418,6 @@ MonoBehaviour:
   nameText: {fileID: 412971708}
   dialogueText: {fileID: 1714653602}
   prefab: {fileID: 1705864824371377738, guid: 9f4fb946d6547c146abc30e7a344f6cd, type: 3}
-  prefabAccumulator: {fileID: 0}
 --- !u!4 &1530816244
 Transform:
   m_ObjectHideFlags: 0

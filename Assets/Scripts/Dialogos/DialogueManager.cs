@@ -81,7 +81,7 @@ public class DialogueManager : MonoBehaviour
         foreach (DialoguePath path in dialogue.Options)
         {
             Vector3 tempTrans = pathsPosition;
-            tempTrans += Vector3.right * 5f;
+            tempTrans -= Vector3.right * 2f;
             tempTrans += Vector3.up * y;
             GameObject g = Instantiate(prefab, tempTrans, Quaternion.Euler(pathsRotation.x, pathsRotation.y, pathsRotation.z));
             g.transform.Find("OptionText").GetComponent<TextMeshPro>().text = path.OptionName;
