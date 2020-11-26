@@ -11,6 +11,9 @@ TagManager:
   - ButtonLevel2
   - ObjectToPickL2
   - Spring
+  - HoleL2
+  - ObjectForHole
+  - ObjectInHole
   layers:
   - Default
   - TransparentFX
