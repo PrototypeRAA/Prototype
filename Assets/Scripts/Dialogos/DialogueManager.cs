@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class DialogueManager : MonoBehaviour
 {
     public Animator animator;
@@ -17,12 +18,18 @@ public class DialogueManager : MonoBehaviour
     // Prefab de la opcion
     public GameObject prefab;
 
-    GameObject[] listOfOptions;
-
     public Vector3 PathsDisplayPosition { get; private set; }
     public DialogueTree CurrentDialogueTree { get; private set; }
     public Dialogue CurrentDialogue { get; private set; }
 
+
+    GameObject[] listOfOptions;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // Comienza el diálogo "dialogueTree", mostrando en pantalla su texto y mostrando en "OptionsPosition" las opciones
     public void StartDialogue(DialogueTree dialogueTree, Vector3 pathsDisplayPosition)
@@ -64,6 +71,11 @@ public class DialogueManager : MonoBehaviour
         if (CurrentDialogue.Options.Count >= 2)
             ImprimirEnPantallaPaths(CurrentDialogue, PathsDisplayPosition, Vector3.left * 90);
 
+        // Reproducir audio del diálogo
+        if (CurrentDialogue.Sound != null) {
+            audioSource.clip = CurrentDialogue.Sound;
+            audioSource.Play();
+        }
 
         // Comprobamos si se tiene que actualizar sola la caja de diálogos
         CheckForAutoUpdate();
@@ -95,6 +107,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void ErasePaths(){
+        if (listOfOptions == null) return;
+
         for (int i=0;i<listOfOptions.Length;i++)
         {
             if (listOfOptions[i] != null)
@@ -123,9 +137,29 @@ public class DialogueManager : MonoBehaviour
     {
         if (CurrentDialogue.Options.Count < 2)
         { // Auto choose next option
-            float timeBeforeSkip = 2f;
+            float timeBeforeSkip = GetDialogueSkipTime(CurrentDialogue);
             Invoke("AutoChooseOption", timeBeforeSkip);
         }
+    }
+
+    private float GetDialogueSkipTime(Dialogue d)
+    {
+        float intervalBetweenAudios = 0.25f;
+        float timePerCharacter = 0.05f;
+
+        float audioTime = d.Sound ? 
+            d.Sound.length + intervalBetweenAudios  // Audio length plus a little
+                : 
+            0;
+
+        float textTime = !string.IsNullOrEmpty(d.Text) ? 
+            Mathf.Max(2, d.Text.Length * timePerCharacter) // 2secs if text is short or more if text is long
+                : 
+            0;
+
+
+        Debug.Log("Wait: " + audioTime + " or " + textTime);
+        return Mathf.Max(audioTime, textTime);
     }
 
     private void AutoChooseOption()

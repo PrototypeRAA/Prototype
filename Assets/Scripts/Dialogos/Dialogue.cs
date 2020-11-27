@@ -13,6 +13,7 @@ public class Dialogue
     public Sprite Sprite { get; set; }
     public string Text { get; private set; }
     public List<DialoguePath> Options { get; private set; } = new List<DialoguePath>();
+    public AudioClip Sound { get; set; }
 
 
     /// Default Option goes to no dialogue => Ends conversation
