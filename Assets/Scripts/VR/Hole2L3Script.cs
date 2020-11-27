@@ -61,7 +61,7 @@ public class Hole2L3Script : AbstractInteractable
     }
 
     private void AbrirPuertaSala3(){
-        puertaSala3.transform.Rotate(0, 0, 90);
+        puertaSala3.transform.Rotate(0, 0, -90);
         Movimiento scriptMovimiento = player.GetComponent<Movimiento>();
         scriptMovimiento.isMoving = false;
         audioPuerta.Play();

@@ -18,6 +18,7 @@ TagManager:
   - BlueBallS4
   - BlueHole
   - RedHole
+  - ParentForRotation
   layers:
   - Default
   - TransparentFX

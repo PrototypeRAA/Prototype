@@ -58,7 +58,7 @@ public class ColliderButtonL2 : AbstractInteractable
         }
     }
     private void AbrirPuertaNivel2(){
-        puertaNivel2.transform.Rotate(0, 0, 90);
+        puertaNivel2.transform.Rotate(0, 0, -90);
         Movimiento scriptMovimiento = player.GetComponent<Movimiento>();
         scriptMovimiento.isMoving = false;
         audioPuerta.Play();
