@@ -51,6 +51,8 @@ public class HoleForBallScript : MonoBehaviour
     }
 
     public void AbrirPuertaSala4(){
+        InventarioScript inventario = player.GetComponent<InventarioScript>();
+        inventario.CambiarTexto("Sala 4 superada!");
         Debug.Log("Sala 4 superada");
         puertaSala4.transform.Rotate(0, 0, -90);
         Movimiento scriptMovimiento = player.GetComponent<Movimiento>();
