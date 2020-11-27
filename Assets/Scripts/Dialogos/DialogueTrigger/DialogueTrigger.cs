@@ -14,6 +14,11 @@ public class DialogueTrigger : AbstractInteractable
     }
     
     public override void HaSidoMirado(){
+        Trigger();
+    }
+
+    protected void Trigger()
+    {
         manager.StartDialogue(Tree, transform.position);
     }
 }

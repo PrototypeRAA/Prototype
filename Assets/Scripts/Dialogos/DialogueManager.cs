@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour
     // Sitio donde se escribe el diálogo
     public TMP_Text dialogueText;
     // Prefab de la opcion
-    public GameObject prefab;
+    public GameObject prefabOpcion;
 
     public Vector3 PathsDisplayPosition { get; private set; }
     public DialogueTree CurrentDialogueTree { get; private set; }
@@ -95,7 +95,7 @@ public class DialogueManager : MonoBehaviour
             Vector3 tempTrans = pathsPosition;
             tempTrans -= Vector3.right * 2f;
             tempTrans += Vector3.up * y;
-            GameObject g = Instantiate(prefab, tempTrans, Quaternion.Euler(pathsRotation.x, pathsRotation.y, pathsRotation.z));
+            GameObject g = Instantiate(prefabOpcion, tempTrans, Quaternion.Euler(pathsRotation.x, pathsRotation.y, pathsRotation.z));
             g.transform.Find("OptionText").GetComponent<TextMeshPro>().text = path.OptionName;
             g.AddComponent<OptionTrigger>();
             g.GetComponent<OptionTrigger>().path = path;
