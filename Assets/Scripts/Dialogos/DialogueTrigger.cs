@@ -11,47 +11,9 @@ public class DialogueTrigger : AbstractInteractable
     {
         base.Start();
         manager = FindObjectOfType<DialogueManager>();
-
-        // Dialogo de prueba
-        Tree = new DialogueTree();
-        Sprite pic = Resources.Load<Sprite>("Sprites/UI/Dialogue/pc_icon");
-
-        Dialogue Root = new Dialogue("La raíz", "Ordenador", pic);
-
-        Dialogue DialogoOpcion1 = new Dialogue("Estás en el diálogo 1", "Ordenador", pic);
-        Dialogue DialogoOpcion2 = new Dialogue("Estás en el diálogo 2", "Ordenador", pic);
-        Dialogue DialogoOpcion3 = new Dialogue("Estás en el diálogo 3", "Ordenador", pic);
-
-        Root.AddOption(new DialoguePath("Ir a 1", DialogoOpcion1) );
-        Root.AddOption(new DialoguePath("Ir a 2", DialogoOpcion2) );
-        DialogoOpcion1.AddOption(new DialoguePath("Ir a 3 desde 1", DialogoOpcion3) );
-        DialogoOpcion2.AddOption(new DialoguePath("Ir a 3 desde 2", DialogoOpcion3) );
-        
-        Tree.AddDialogue(Root);
-        Tree.AddDialogue(DialogoOpcion1);
-        Tree.AddDialogue(DialogoOpcion2);
-        Tree.AddDialogue(DialogoOpcion3);
     }
     
     public override void HaSidoMirado(){
         manager.StartDialogue(Tree, transform.position);
     }
-
-    /*
-    IEnumerator PruebaInteraccion()
-    {
-        yield return new WaitForSeconds(2f);
-        List<DialoguePath> options = manager.CurrentDialogue.Options;
-        System.Random r = new System.Random();
-        manager.PathTaken( options[ r.Next(0, options.Count)] );
-
-        yield return new WaitForSeconds(2f);
-        options = manager.CurrentDialogue.Options;
-        manager.PathTaken(options[r.Next(0, options.Count)]);
-
-        // Como solo hay 2 caminos, ahora debería terminar
-        yield return new WaitForSeconds(2f);
-        manager.EndDialogue();
-    }
-    */
 }

@@ -1393,6 +1393,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1530816244}
+  - component: {fileID: 1530816245}
+  - component: {fileID: 1530816246}
   - component: {fileID: 1530816243}
   m_Layer: 0
   m_Name: DialogueManager
@@ -1432,6 +1434,164 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1530816245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530816242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4b5ddf5f701f44c9f1f48edfae2291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogues:
+  - id: 0
+    Speaker: Ordenador
+    Sprite: {fileID: 21300000, guid: 2d400efd0ef9a684f9610120df792cac, type: 3}
+    Text: Hola, te doy la bienvenida
+    Sound: {fileID: 8300000, guid: 1cf1b19dae9798f44adf5ed00510502c, type: 3}
+    OptionsText:
+    - 
+    OptionsDestination: 01000000
+  - id: 1
+    Speaker: Ordenador
+    Sprite: {fileID: 21300000, guid: 2d400efd0ef9a684f9610120df792cac, type: 3}
+    Text: "\xBFC\xF3mo te sientes?"
+    Sound: {fileID: 8300000, guid: dc5402281a157f049afc6a2534aa5d52, type: 3}
+    OptionsText:
+    - Perfectamente
+    - No muy bien
+    OptionsDestination: 0200000003000000
+  - id: 2
+    Speaker: Ordenador
+    Sprite: {fileID: 21300000, guid: 2d400efd0ef9a684f9610120df792cac, type: 3}
+    Text: Me alegro
+    Sound: {fileID: 8300000, guid: 920b8320cd50d8c49928ab289be33dde, type: 3}
+    OptionsText:
+    - 
+    OptionsDestination: 04000000
+  - id: 3
+    Speaker: Ordenador
+    Sprite: {fileID: 21300000, guid: 2d400efd0ef9a684f9610120df792cac, type: 3}
+    Text: Lo lamento
+    Sound: {fileID: 8300000, guid: 27576f251e27e8f40acc8f8ec39f82c8, type: 3}
+    OptionsText:
+    - 
+    OptionsDestination: 04000000
+  - id: 4
+    Speaker: Ordenador
+    Sprite: {fileID: 21300000, guid: 2d400efd0ef9a684f9610120df792cac, type: 3}
+    Text: Estas prueba son duras
+    Sound: {fileID: 8300000, guid: c4628d0aea270f54caca3a8d16f5574e, type: 3}
+    OptionsText:
+    - 
+    OptionsDestination: 05000000
+  - id: 5
+    Speaker: Ordenador
+    Sprite: {fileID: 21300000, guid: 2d400efd0ef9a684f9610120df792cac, type: 3}
+    Text: "Har\xE1n que te sientas peor"
+    Sound: {fileID: 8300000, guid: b95912a38641dd8479e1fb44d99fc41e, type: 3}
+    OptionsText: []
+    OptionsDestination: 
+  Trigger: {fileID: 723535667}
+--- !u!82 &1530816246
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530816242}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1693943782 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6104560237537805087, guid: debc46c1945c12a46a47e7ab0c84b094,

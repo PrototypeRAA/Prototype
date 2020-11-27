@@ -156,9 +156,7 @@ public class DialogueManager : MonoBehaviour
             Mathf.Max(2, d.Text.Length * timePerCharacter) // 2secs if text is short or more if text is long
                 : 
             0;
-
-
-        Debug.Log("Wait: " + audioTime + " or " + textTime);
+        
         return Mathf.Max(audioTime, textTime);
     }
 
