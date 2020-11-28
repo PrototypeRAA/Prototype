@@ -18,12 +18,6 @@ public class ColliderLowPolyBox : AbstractInteractable
         player = GameObject.FindWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public override void OnPointerEnter(){
         Debug.Log("Entrada al cubo");
         this.gameObject.GetComponent<Renderer>().material.color = Color.yellow;

@@ -15,6 +15,10 @@ public class InventarioScript : MonoBehaviour
     
     public bool inventarioBloqueado = false;
 
+    public AudioSource audioAddInventario;
+
+    public AudioSource audioFullInventario;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +46,10 @@ public class InventarioScript : MonoBehaviour
         if(objetoEnInventario == null){
             objetoEnInventario = objetoParaInventario;
             CambiarTexto("Objeto añadido al inventario");
+            audioAddInventario.PlayOneShot(audioAddInventario.clip);
         }else{
             CambiarTexto("Inventario lleno");
+            audioFullInventario.PlayOneShot(audioFullInventario.clip);
         }
         }
     }

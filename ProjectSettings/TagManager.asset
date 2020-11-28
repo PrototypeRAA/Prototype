@@ -10,6 +10,15 @@ TagManager:
   - ObjectInButton
   - ButtonLevel2
   - ObjectToPickL2
+  - Spring
+  - HoleL2
+  - ObjectForHole
+  - ObjectInHole
+  - RedBallS4
+  - BlueBallS4
+  - BlueHole
+  - RedHole
+  - ParentForRotation
   layers:
   - Default
   - TransparentFX

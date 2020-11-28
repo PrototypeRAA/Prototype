@@ -80,11 +80,11 @@ public abstract class AbstractInteractable : MonoBehaviour
     public virtual void OnPointerClick() { }
 
     // Llamado cuando el jugador empieza a mirar el objeto
-    public virtual void OnPointerEnter() { }
+    public virtual void OnPointerEnter(){}
 
     // Llamado cuando el jugador deja de mirar el objeto
-    public virtual void OnPointerExit() { }
+    public virtual void OnPointerExit(){}
 
     // Llamado cuando el objeto ha sido mirado durante LookDuration segundos
-    public virtual void HaSidoMirado() { }
+    public virtual void HaSidoMirado(){}
 }

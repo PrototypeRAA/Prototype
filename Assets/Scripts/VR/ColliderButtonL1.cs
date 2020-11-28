@@ -14,6 +14,10 @@ public class ColliderButtonL1 : AbstractInteractable
 
     private bool finalizado;
 
+    public AudioSource audioPuerta;
+
+    public AudioSource audioBtn;
+
     void Start()
     {
         base.Start();
@@ -57,6 +61,7 @@ public class ColliderButtonL1 : AbstractInteractable
     public void OnTriggerEnter(Collider col){
         //Comprobar la tag del objeto con el que ha colisionado
         if(col.tag == "ObjectInButton"){
+            audioBtn.PlayOneShot(audioBtn.clip);
             this.gameObject.GetComponent<Renderer>().material.color = Color.green;
             finalizado = true;
             InventarioScript inventario = player.GetComponent<InventarioScript>();
@@ -68,6 +73,7 @@ public class ColliderButtonL1 : AbstractInteractable
     }
 
     private void AbrirPuertaNivel1(){
-        puertaNivel1.transform.Rotate(0, 0, 90);
+        puertaNivel1.transform.Rotate(0, 0, -90);
+        audioPuerta.Play();
     }
 }

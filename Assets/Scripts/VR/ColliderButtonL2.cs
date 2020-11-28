@@ -11,6 +11,9 @@ public class ColliderButtonL2 : AbstractInteractable
     public GameObject objetoMirado;
     public GameObject player;
     public GameObject puertaNivel2;
+    public AudioSource audioPuerta;
+    public AudioSource audioBtn;
+    public AudioSource audioClick;
 
     void Start()
     {
@@ -35,21 +38,24 @@ public class ColliderButtonL2 : AbstractInteractable
     }
 
     public void OnTriggerEnter(Collider col){
-        //Comprobar la tag del objeto con el que ha colisionado
+        ColliderButtonL2 colliderOtroBtn = theOtherButton.GetComponent<ColliderButtonL2>();
         if(col.tag == "ObjectInButton"){
             this.gameObject.GetComponent<Renderer>().material.color = Color.green;
             InventarioScript inventario = player.GetComponent<InventarioScript>();
             //Abrir nivel 2 y vaciar inventario
             inventario.objetoEnInventario = null;
             activado = true;
+            audioBtn.PlayOneShot(audioBtn.clip);
+            if(colliderOtroBtn.activado){
+                this.gameObject.GetComponent<Renderer>().material.color = Color.green;
+                activado = true;
+                AbrirPuertaNivel2();
+            }
         }
         else if(col.tag == "Player"){
-            ColliderButtonL2 colliderOtroBtn = theOtherButton.GetComponent<ColliderButtonL2>();
+            audioClick.PlayOneShot(audioClick.clip);
+            activado = true;
             if(colliderOtroBtn.activado){
-                InventarioScript inventario = player.GetComponent<InventarioScript>();
-                //Abrir nivel 2 y vaciar inventario
-                inventario.CambiarTexto("Nivel 2 superado!");
-                player.transform.position = new Vector3(objetoMirado.transform.position.x, objetoMirado.transform.position.y+3, objetoMirado.transform.position.z);
                 this.gameObject.GetComponent<Renderer>().material.color = Color.green;
                 activado = true;
                 AbrirPuertaNivel2();
@@ -57,9 +63,13 @@ public class ColliderButtonL2 : AbstractInteractable
         }
     }
     private void AbrirPuertaNivel2(){
-        puertaNivel2.transform.Rotate(0, 0, 90);
+        //Abrir nivel 2 y vaciar inventario
+        InventarioScript inventario = player.GetComponent<InventarioScript>();
+        inventario.CambiarTexto("Sala 2 superada!");
+        puertaNivel2.transform.Rotate(0, 0, -90);
         Movimiento scriptMovimiento = player.GetComponent<Movimiento>();
         scriptMovimiento.isMoving = false;
+        audioPuerta.Play();
     }
 
 

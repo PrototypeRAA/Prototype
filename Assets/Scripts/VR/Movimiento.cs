@@ -9,21 +9,25 @@ public class Movimiento : MonoBehaviour
     void Start()
     {
         isMoving = false;
-        //transform.Translate(0f,1.5f,0f);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Movimiento activado
         if(isMoving && !Input.GetButton("Fire1")){
-            //Sacamos los valores de la dirección de la cámara del jugador
+
+            //Obtenemos los valores de la cámara del usuario
             float valueXAxis = Camera.main.transform.forward.x * Time.deltaTime * playerSpeed;
             float valueZAxis = Camera.main.transform.forward.z * Time.deltaTime * playerSpeed;
+
             //Movemos al jugador sin cambios en la altura
             transform.Translate(valueXAxis, 0f, valueZAxis);
+
         } else if(Input.GetButton("Fire1") && !isMoving){
+            //Activamos movimiento
             isMoving = true;
         }else if (Input.GetButton("Fire1") && isMoving){
+            //Desactivamos movimiento
             isMoving = false;
         }
     }
