@@ -11650,7 +11650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584154677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.84, y: -1.470716, z: 20.73}
+  m_LocalPosition: {x: 13.84, y: -1.470716, z: 13.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 453060341}
@@ -14769,7 +14769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746861789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.88, y: 1.935, z: 15.72}
+  m_LocalPosition: {x: 69.49, y: 1.935, z: 15.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1863387703}
@@ -20702,7 +20702,7 @@ GameObject:
   - component: {fileID: 1063654324}
   - component: {fileID: 1063654325}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: PointLightBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30809,6 +30809,7 @@ MonoBehaviour:
   puertaSala4: {fileID: 8925184436775024837}
   audioPuerta: {fileID: 0}
   player: {fileID: 0}
+  lightForHole: {fileID: 1063654323}
 --- !u!114 &1526610414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37293,6 +37294,7 @@ MonoBehaviour:
   puertaSala4: {fileID: 8925184436775024837}
   audioPuerta: {fileID: 0}
   player: {fileID: 0}
+  lightForHole: {fileID: 2038409592}
 --- !u!64 &1903098178
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -39422,7 +39424,7 @@ GameObject:
   - component: {fileID: 2038409593}
   - component: {fileID: 2038409594}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: PointLightRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39591,7 +39593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043508837}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.57, y: -1.470716, z: 12}
+  m_LocalPosition: {x: 13.57, y: -1.470716, z: 19.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 453060341}
