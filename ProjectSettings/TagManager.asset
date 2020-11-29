@@ -19,6 +19,12 @@ TagManager:
   - BlueHole
   - RedHole
   - ParentForRotation
+  - StairPart1
+  - StairPart2
+  - StairPart3
+  - StairPlane1
+  - StairPlane2
+  - StairPlane3
   layers:
   - Default
   - TransparentFX
