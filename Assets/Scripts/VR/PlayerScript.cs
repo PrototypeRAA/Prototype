@@ -11,12 +11,16 @@ public class PlayerScript : MonoBehaviour
     public Image blackImage;
 
     public Animator anim;
+
+    public AudioSource gameOverAudio;
+    public bool isGameOver;
     
     void Start()
     {
         inventario = (InventarioScript) FindObjectOfType(typeof(InventarioScript));
         anim = blackImage.GetComponent<Animator>();
         StartCoroutine(FadeIn());
+        isGameOver = false;
     }
 
 
@@ -26,6 +30,7 @@ public class PlayerScript : MonoBehaviour
     }
 
     public async void GameOver(){
+        gameOverAudio.PlayOneShot(gameOverAudio.clip);
         StartCoroutine(FadeOut());
         Task waitForSceneReload =  Task.Delay(2000);
         await waitForSceneReload;

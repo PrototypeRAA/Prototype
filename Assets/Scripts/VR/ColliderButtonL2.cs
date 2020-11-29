@@ -14,6 +14,7 @@ public class ColliderButtonL2 : AbstractInteractable
     public AudioSource audioPuerta;
     public AudioSource audioBtn;
     public AudioSource audioClick;
+    public AudioSource audioSoltarBtn;
 
     void Start()
     {
@@ -60,6 +61,16 @@ public class ColliderButtonL2 : AbstractInteractable
                 activado = true;
                 AbrirPuertaNivel2();
             }
+        }
+    }
+
+
+    public void OnTriggerExit(Collider col){
+        ColliderButtonL2 colliderOtroBtn = theOtherButton.GetComponent<ColliderButtonL2>();
+
+        if(col.tag == "Player" && !colliderOtroBtn.activado){
+            audioSoltarBtn.PlayOneShot(audioSoltarBtn.clip);
+            activado = false;
         }
     }
     private void AbrirPuertaNivel2(){

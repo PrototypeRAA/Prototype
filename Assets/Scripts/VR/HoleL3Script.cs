@@ -13,11 +13,13 @@ public class HoleL3Script : MonoBehaviour
     }
 
     public void OnTriggerEnter(Collider col){
-    //Comprobar la tag del objeto, puede ser el jugador (game over) o el cubo (sala superada, abrir puerta)
         if(col.tag == "Player"){
             Debug.Log("Game over");
             PlayerScript playerScript = player.GetComponent<PlayerScript>();
-            playerScript.GameOver();
+            if(!playerScript.isGameOver){
+                playerScript.isGameOver = true;
+                playerScript.GameOver();
+            }
         }
     }
 }
