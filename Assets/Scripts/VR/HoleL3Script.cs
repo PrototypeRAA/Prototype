@@ -16,6 +16,8 @@ public class HoleL3Script : MonoBehaviour
     //Comprobar la tag del objeto, puede ser el jugador (game over) o el cubo (sala superada, abrir puerta)
         if(col.tag == "Player"){
             Debug.Log("Game over");
+            PlayerScript playerScript = player.GetComponent<PlayerScript>();
+            playerScript.GameOver();
         }
     }
 }
