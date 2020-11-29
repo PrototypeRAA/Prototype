@@ -45,15 +45,12 @@ public class ColliderButtonL1 : AbstractInteractable
             //Copiar cubo y poner el nuevo encima del botón
             GameObject cuboInventario = inventario.objetoEnInventario;
             GameObject copiaCubo = Instantiate(cuboInventario);
+            copiaCubo.SetActive(true);
             copiaCubo.transform.position = new Vector3(objetoMirado.transform.position.x, objetoMirado.transform.position.y+2, objetoMirado.transform.position.z);
             copiaCubo.gameObject.tag = "ObjectInButton";
             //Eliminar collider del nuevo cubo para que no se pueda interaccionar con él
             ColliderLowPolyBox colliderBox = copiaCubo.GetComponent<ColliderLowPolyBox>();
             Destroy(colliderBox);
-
-            //Eliminar cubo antiguo
-            GameObject cuboInicial = GameObject.FindGameObjectsWithTag("ObjectToPick")[0];
-            Destroy(cuboInicial);
         }
 
     }

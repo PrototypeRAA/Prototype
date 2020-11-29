@@ -19,7 +19,6 @@ public class InventarioScript : MonoBehaviour
 
     public AudioSource audioFullInventario;
 
-    // Start is called before the first frame update
     void Start()
     {
         segundosEspera = 2.5f;
@@ -44,6 +43,7 @@ public class InventarioScript : MonoBehaviour
     public void NuevoObjetoEnInventario(GameObject objetoParaInventario){
         if(!inventarioBloqueado){
         if(objetoEnInventario == null){
+            objetoParaInventario.SetActive(false);
             objetoEnInventario = objetoParaInventario;
             CambiarTexto("Objeto añadido al inventario");
             audioAddInventario.PlayOneShot(audioAddInventario.clip);

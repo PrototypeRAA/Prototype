@@ -42,14 +42,13 @@ public class Hole2L3Script : AbstractInteractable
         if(inventario.objetoEnInventario != null){
             GameObject cuboInventario = inventario.objetoEnInventario;
             GameObject copiaCubo = Instantiate(cuboInventario);
+            copiaCubo.SetActive(true);
             copiaCubo.transform.position = new Vector3(foso.transform.position.x, foso.transform.position.y+2, foso.transform.position.z);
             copiaCubo.gameObject.tag="ObjectInHole";
             ColliderLowPolyBox colliderBox = copiaCubo.GetComponent<ColliderLowPolyBox>();
             Destroy(colliderBox);
             GvrPointerGraphicRaycaster gaze = copiaCubo.GetComponent<GvrPointerGraphicRaycaster>();
             Destroy(gaze);
-            GameObject cuboInicial = GameObject.FindGameObjectsWithTag("ObjectForHole")[0];
-            Destroy(cuboInicial);
         }
     }
 

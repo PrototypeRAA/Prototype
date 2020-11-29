@@ -14,6 +14,7 @@ public class ColliderButtonL2 : AbstractInteractable
     public AudioSource audioPuerta;
     public AudioSource audioBtn;
     public AudioSource audioClick;
+    public AudioSource audioSoltarBtn;
 
     void Start()
     {
@@ -62,6 +63,16 @@ public class ColliderButtonL2 : AbstractInteractable
             }
         }
     }
+
+
+    public void OnTriggerExit(Collider col){
+        ColliderButtonL2 colliderOtroBtn = theOtherButton.GetComponent<ColliderButtonL2>();
+
+        if(col.tag == "Player" && !colliderOtroBtn.activado){
+            audioSoltarBtn.PlayOneShot(audioSoltarBtn.clip);
+            activado = false;
+        }
+    }
     private void AbrirPuertaNivel2(){
         //Abrir nivel 2 y vaciar inventario
         InventarioScript inventario = player.GetComponent<InventarioScript>();
@@ -80,15 +91,12 @@ public class ColliderButtonL2 : AbstractInteractable
             //Copiar cubo y poner el nuevo encima del botón
             GameObject cuboInventario = inventario.objetoEnInventario;
             GameObject copiaCubo = Instantiate(cuboInventario);
+            copiaCubo.SetActive(true);
             copiaCubo.transform.position = new Vector3(objetoMirado.transform.position.x, objetoMirado.transform.position.y+2, objetoMirado.transform.position.z);
             copiaCubo.gameObject.tag = "ObjectInButton";
             //Eliminar collider del nuevo cubo para que no se pueda interaccionar con él
             ColliderLowPolyBox colliderBox = copiaCubo.GetComponent<ColliderLowPolyBox>();
             Destroy(colliderBox);
-
-            //Eliminar cubo antiguo
-            GameObject cuboInicial = GameObject.FindGameObjectsWithTag("ObjectToPickL2")[0];
-            Destroy(cuboInicial);
             activado = true;
         }
     }

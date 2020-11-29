@@ -17,6 +17,10 @@ public class HoleForBallScript : MonoBehaviour
 
     public GameObject player;
 
+    public GameObject lightForHole;
+
+    public AudioSource audioCorrectBall;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,15 +36,27 @@ public class HoleForBallScript : MonoBehaviour
         if(col.tag == "BlueBallS4" && ownTag == "BlueHole"){
             isFilled = true;
             CheckOtherHole();
+            ChangeHoleLight();
         }
         else if(col.tag == "RedBallS4" && ownTag == "RedHole"){
             isFilled = true;
             CheckOtherHole();
+            ChangeHoleLight();
         }
         else if(col.tag == "Player"){
             Debug.Log("game over");
         }
     }
+
+    public void ChangeHoleLight(){
+        audioCorrectBall.PlayOneShot(audioCorrectBall.clip);
+        Light lightComponent = lightForHole.GetComponent<Light>(); 
+        lightComponent.range = 2;
+        lightComponent.intensity = 0.2f;
+        Color greenForHole = new Color(39f, 174f, 96f);
+        lightComponent.color = greenForHole;
+    }
+
 
 
     public void CheckOtherHole(){
