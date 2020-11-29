@@ -19,6 +19,8 @@ public class HoleForBallScript : MonoBehaviour
 
     public GameObject lightForHole;
 
+    public AudioSource audioCorrectBall;
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,7 @@ public class HoleForBallScript : MonoBehaviour
     }
 
     public void ChangeHoleLight(){
+        audioCorrectBall.PlayOneShot(audioCorrectBall.clip);
         Light lightComponent = lightForHole.GetComponent<Light>(); 
         lightComponent.range = 2;
         lightComponent.intensity = 0.2f;
