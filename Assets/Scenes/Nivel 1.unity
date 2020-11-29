@@ -46204,6 +46204,7 @@ GameObject:
   - component: {fileID: 1757313795284111844}
   - component: {fileID: 2389156956027711322}
   - component: {fileID: 1279892259}
+  - component: {fileID: 8925184436775024838}
   m_Layer: 0
   m_Name: DoorBodySala4
   m_TagString: Untagged
@@ -46211,6 +46212,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8925184436775024838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925184436775024837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20000009, y: 0.018639458, z: 0.4518492}
+  m_Center: {x: 0.09927174, y: 0.0037783259, z: -0.047296416}
 --- !u!1 &8925184437243796449
 GameObject:
   m_ObjectHideFlags: 0
@@ -46224,6 +46238,7 @@ GameObject:
   - component: {fileID: 2389156955424574590}
   - component: {fileID: 8925184437243796450}
   - component: {fileID: 8925184437243796451}
+  - component: {fileID: 8925184437243796452}
   m_Layer: 0
   m_Name: Vert.004
   m_TagString: Untagged
@@ -46342,6 +46357,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &8925184437243796452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925184437243796449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20000021, y: 0.027042247, z: 0.4518493}
+  m_Center: {x: 0.09927135, y: 0.004268344, z: -0.047296368}
 --- !u!1 &8925184437484511550
 GameObject:
   m_ObjectHideFlags: 0
@@ -46354,6 +46382,7 @@ GameObject:
   - component: {fileID: 1757313796730751007}
   - component: {fileID: 2389156955402106529}
   - component: {fileID: 1661095509}
+  - component: {fileID: 8925184437484511551}
   m_Layer: 0
   m_Name: DoorBodySala3
   m_TagString: Untagged
@@ -46361,6 +46390,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8925184437484511551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925184437484511550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20000015, y: 0.018184667, z: 0.45184928}
+  m_Center: {x: 0.09927154, y: 0.009574461, z: -0.047296375}
 --- !u!1 &8925184437984664001
 GameObject:
   m_ObjectHideFlags: 0
@@ -46373,6 +46415,7 @@ GameObject:
   - component: {fileID: 1757313796226412768}
   - component: {fileID: 2389156954818023006}
   - component: {fileID: 8925184437984664002}
+  - component: {fileID: 8925184437984664003}
   m_Layer: 0
   m_Name: DoorBodySala1
   m_TagString: Untagged
@@ -46476,6 +46519,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &8925184437984664003
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925184437984664001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20000015, y: 0.02149412, z: 0.45184925}
+  m_Center: {x: 0.09927153, y: 0.0107458485, z: -0.047296375}
 --- !u!1 &8925184438165473717
 GameObject:
   m_ObjectHideFlags: 0
@@ -46506,6 +46562,7 @@ GameObject:
   - component: {fileID: 1757313796399964748}
   - component: {fileID: 2389156954526375154}
   - component: {fileID: 8925184438225881966}
+  - component: {fileID: 8925184438225881967}
   m_Layer: 0
   m_Name: DoorBodySala2
   m_TagString: Untagged
@@ -46609,3 +46666,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &8925184438225881967
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925184438225881965}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20000009, y: 0.016481496, z: 0.4518492}
+  m_Center: {x: 0.09927162, y: 0.009548633, z: -0.04729642}
