@@ -7,7 +7,7 @@ public class ColliderLowPolyBox : AbstractInteractable
 
     private GameObject player; 
 
-    public GameObject objetoMirado;
+    private GameObject objetoMirado;
 
     public bool inventarioVacio;
 
@@ -16,6 +16,7 @@ public class ColliderLowPolyBox : AbstractInteractable
     {
         base.Start();
         player = GameObject.FindWithTag("Player");
+        objetoMirado = this.gameObject;
     }
 
     public override void OnPointerEnter(){

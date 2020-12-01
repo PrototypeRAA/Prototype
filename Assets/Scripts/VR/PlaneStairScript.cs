@@ -9,6 +9,7 @@ public class PlaneStairScript : AbstractInteractable
     public bool planeActivated;
     public GameObject otherPiece1;
     public GameObject otherPiece2;
+    public GameObject puertaSala5;
 
     void Start()
     {
@@ -31,7 +32,30 @@ public class PlaneStairScript : AbstractInteractable
             ColliderLowPolyBox colliderBox = copiaPiezaEscalera.GetComponent<ColliderLowPolyBox>();
             Destroy(colliderBox);
             planeActivated  = true;
+            //Vaciado de inventario
+            inventario.objetoEnInventario = null;
+            CheckForFullStair();
+            this.gameObject.SetActive(false);
             }
         }
+    }
+
+    public void CheckForFullStair(){
+        PlaneStairScript otherPlane1 = otherPiece1.GetComponent<PlaneStairScript>();
+        PlaneStairScript otherPlane2 = otherPiece2.GetComponent<PlaneStairScript>();
+
+        if(otherPlane1.planeActivated && otherPlane2.planeActivated){
+            AbrirPuertaSala5();
+        }
+    }
+
+
+    public void AbrirPuertaSala5(){
+        InventarioScript inventario = player.GetComponent<InventarioScript>();
+        inventario.CambiarTexto("Sala 5 superada!");
+        puertaSala5.transform.Rotate(0, 0, -90);
+        Movimiento scriptMovimiento = player.GetComponent<Movimiento>();
+        scriptMovimiento.playerSpeed = 7;
+        scriptMovimiento.isMoving = false;
     }
 }
