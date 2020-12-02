@@ -18,6 +18,10 @@ public class PlaneStairScript : AbstractInteractable
         player = GameObject.FindWithTag("Player");
     }
 
+    void Update(){
+        this.gameObject.transform.Rotate (0,50*Time.deltaTime,0);
+    }
+
     public override void HaSidoMirado()
     {
         InventarioScript inventario = player.GetComponent<InventarioScript>();
@@ -26,16 +30,20 @@ public class PlaneStairScript : AbstractInteractable
             GameObject piezaEscaleraInventario = inventario.objetoEnInventario;
             GameObject copiaPiezaEscalera = Instantiate(piezaEscaleraInventario);
             copiaPiezaEscalera.SetActive(true);
-            copiaPiezaEscalera.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y+0.25f, this.gameObject.transform.position.z);
+            copiaPiezaEscalera.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y+1f, this.gameObject.transform.position.z);
             copiaPiezaEscalera.gameObject.tag = "ObjectInButton";
-            //Eliminar collider de la pieza para que no se pueda interaccionar con ella
+            //Eliminar collider y Gvr Pointer Graphic Raycaster de la pieza para que no se pueda interaccionar con ella
             ColliderLowPolyBox colliderBox = copiaPiezaEscalera.GetComponent<ColliderLowPolyBox>();
+            GvrPointerGraphicRaycaster grvPointer = copiaPiezaEscalera.GetComponent<GvrPointerGraphicRaycaster>();
             Destroy(colliderBox);
+            Destroy(grvPointer);
+            copiaPiezaEscalera.GetComponent<Renderer>().material.color = Color.white;
             planeActivated  = true;
             //Vaciado de inventario
             inventario.objetoEnInventario = null;
             CheckForFullStair();
             this.gameObject.SetActive(false);
+            //TODO congelar posición "y" con una task con delay después de hacer el deploy a 1 metro
             }
         }
     }
@@ -43,7 +51,6 @@ public class PlaneStairScript : AbstractInteractable
     public void CheckForFullStair(){
         PlaneStairScript otherPlane1 = otherPiece1.GetComponent<PlaneStairScript>();
         PlaneStairScript otherPlane2 = otherPiece2.GetComponent<PlaneStairScript>();
-
         if(otherPlane1.planeActivated && otherPlane2.planeActivated){
             AbrirPuertaSala5();
         }
@@ -55,7 +62,7 @@ public class PlaneStairScript : AbstractInteractable
         inventario.CambiarTexto("Sala 5 superada!");
         puertaSala5.transform.Rotate(0, 0, -90);
         Movimiento scriptMovimiento = player.GetComponent<Movimiento>();
-        scriptMovimiento.playerSpeed = 7;
+        //scriptMovimiento.playerSpeed = 7;
         scriptMovimiento.isMoving = false;
     }
 }
