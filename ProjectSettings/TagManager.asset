@@ -22,6 +22,9 @@ TagManager:
   - StairPart1
   - StairPart2
   - StairPart3
+  - CubeObject
+  - SphereObject
+  - PrismObject
   layers:
   - Default
   - TransparentFX

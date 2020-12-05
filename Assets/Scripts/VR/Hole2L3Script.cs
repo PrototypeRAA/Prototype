@@ -13,7 +13,6 @@ public class Hole2L3Script : AbstractInteractable
 
     public AudioSource audioPuerta;
 
-
     void Start()
     {
         base.Start();
