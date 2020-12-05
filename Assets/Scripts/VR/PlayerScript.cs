@@ -37,6 +37,13 @@ public class PlayerScript : MonoBehaviour
         SceneManager.LoadScene("Nivel 1");
     }
 
+    public async void TransitionToNextLevel(){
+         StartCoroutine(FadeOut());
+        Task waitForSceneReload =  Task.Delay(3000);
+        await waitForSceneReload;
+        SceneManager.LoadScene("Nivel 2");
+    }
+
    IEnumerator FadeOut(){
        anim.SetBool("fadeOut", true);
        yield return new WaitUntil(()=> blackImage.color.a == 1);
