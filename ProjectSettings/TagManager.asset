@@ -25,6 +25,8 @@ TagManager:
   - CubeObject
   - SphereObject
   - PrismObject
+  - FinalPlatform
+  - DoorRoom2Level2
   layers:
   - Default
   - TransparentFX
