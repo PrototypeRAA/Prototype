@@ -8,7 +8,7 @@ public class HoleLevel2Script : AbstractInteractable
     public GameObject player;
 
     public GameObject secondPlane;
-    public GameObject thirdPlane;
+    public GameObject spherePlane;
 
     public GameObject doorRoom1Level2;
 
@@ -49,11 +49,12 @@ public class HoleLevel2Script : AbstractInteractable
 
     public void CheckForRoomSolved(){
         HoleLevel2Script scriptSecondPlane = secondPlane.GetComponent<HoleLevel2Script>();
-        HoleLevel2Script scriptThirdPlane = thirdPlane.GetComponent<HoleLevel2Script>();
+        SpherePlaneScript scriptSpherePlane = spherePlane.GetComponent<SpherePlaneScript>();
 
-        if(scriptSecondPlane.isActivated && scriptThirdPlane.isActivated){
+        if(scriptSecondPlane.isActivated && scriptSpherePlane.isActivated){
             OpenDoorRoom1();
         }
+        
     }
 
     private void OpenDoorRoom1(){

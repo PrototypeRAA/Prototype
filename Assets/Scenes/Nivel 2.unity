@@ -3196,8 +3196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 109050435}
-  secondPlane: {fileID: 1538653971}
-  thirdPlane: {fileID: 646972391}
+  secondPlane: {fileID: 646972391}
+  spherePlane: {fileID: 1538653971}
   doorRoom1Level2: {fileID: 8925184437984664001}
   isActivated: 0
 --- !u!1001 &239136698
@@ -8747,7 +8747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 109050435}
   secondPlane: {fileID: 234420535}
-  thirdPlane: {fileID: 1538653971}
+  spherePlane: {fileID: 1538653971}
   doorRoom1Level2: {fileID: 8925184437984664001}
   isActivated: 0
 --- !u!1 &657217599
@@ -20261,9 +20261,8 @@ GameObject:
   - component: {fileID: 1538653977}
   - component: {fileID: 1538653976}
   - component: {fileID: 1538653975}
-  - component: {fileID: 1538653974}
   - component: {fileID: 1538653973}
-  - component: {fileID: 1538653979}
+  - component: {fileID: 1538653974}
   m_Layer: 0
   m_Name: PlaneHoleSphere
   m_TagString: SphereObject
@@ -20312,14 +20311,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1538653971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 739800cd36aba44e9b04ce977e5784bd, type: 3}
+  m_Script: {fileID: 11500000, guid: e452eb71d38e8447dbb5b97f1b43e2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 2
-  blockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  player: {fileID: 109050435}
+  secondPlane: {fileID: 234420535}
+  thirdPlane: {fileID: 646972391}
+  doorRoom1Level2: {fileID: 8925184437984664001}
+  isActivated: 0
 --- !u!223 &1538653975
 Canvas:
   m_ObjectHideFlags: 0
@@ -20349,10 +20348,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538653971}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1538653977
@@ -20402,23 +20401,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538653971}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1538653979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538653971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a40b264a5245a4ab1bc65424a410c7b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 109050435}
-  secondPlane: {fileID: 234420535}
-  thirdPlane: {fileID: 646972391}
-  doorRoom1Level2: {fileID: 8925184437984664001}
-  isActivated: 0
 --- !u!1001 &1547546868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26471,10 +26453,7 @@ GameObject:
   - component: {fileID: 1820458383836617839}
   - component: {fileID: 8593979764582243207}
   - component: {fileID: 121254632936612610}
-  - component: {fileID: 121254632936612609}
   - component: {fileID: 121254632936612611}
-  - component: {fileID: 121254632936612612}
-  - component: {fileID: 121254632936612613}
   - component: {fileID: 121254632936612607}
   - component: {fileID: 121254632936612614}
   m_Layer: 0
@@ -26517,23 +26496,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5.057, y: -3.8700004}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &121254632936612609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121254632936612606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 739800cd36aba44e9b04ce977e5784bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 2
-  blockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!223 &121254632936612610
 Canvas:
   m_ObjectHideFlags: 0
@@ -26568,35 +26530,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
---- !u!114 &121254632936612612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121254632936612606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb5dd43baba2d4dc1bab789615567e3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycasterEventMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  maxRaycastHits: 64
---- !u!114 &121254632936612613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121254632936612606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5d870ad357d94508aac2ced3a13124a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventarioVacio: 0
 --- !u!54 &121254632936612614
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26611,7 +26544,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!33 &453967908668270013
 MeshFilter:
