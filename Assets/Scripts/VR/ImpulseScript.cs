@@ -6,6 +6,8 @@ public class ImpulseScript : MonoBehaviour
 {
     GameObject player;
 
+    public AudioSource impulseAudio;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -19,6 +21,7 @@ public class ImpulseScript : MonoBehaviour
             float cameraValueZ = Camera.main.transform.forward.z;
             Vector3 springImpulse = new Vector3(cameraValueX, 5.0f, cameraValueZ);
             player.GetComponent<Rigidbody>().AddForce(springImpulse, ForceMode.Impulse);
+            impulseAudio.PlayOneShot(impulseAudio.clip);
         }
     }
 }

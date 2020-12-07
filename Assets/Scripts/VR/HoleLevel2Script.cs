@@ -38,10 +38,13 @@ public class HoleLevel2Script : AbstractInteractable
                 GameObject copiaObjeto = Instantiate(objetoADuplicar);
                 copiaObjeto.SetActive(true);
                 copiaObjeto.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y+2, this.gameObject.transform.position.z);
-                ColliderLowPolyBox colliderBox = objetoADuplicar.GetComponent<ColliderLowPolyBox>();
+                ColliderLowPolyBox colliderBox = copiaObjeto.GetComponent<ColliderLowPolyBox>();
+                copiaObjeto.GetComponent<Renderer>().material.color = Color.white;
                 Destroy(colliderBox);
-                GvrPointerGraphicRaycaster gaze = objetoADuplicar.GetComponent<GvrPointerGraphicRaycaster>();
+                GvrPointerGraphicRaycaster gaze = copiaObjeto.GetComponent<GvrPointerGraphicRaycaster>();
                 Destroy(gaze);
+                GvrPointerPhysicsRaycaster physicsRaycaster = copiaObjeto.GetComponent<GvrPointerPhysicsRaycaster>();
+                Destroy(physicsRaycaster);
                 CheckForRoomSolved();
                 inventario.objetoEnInventario = null;
             }

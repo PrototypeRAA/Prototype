@@ -23,6 +23,8 @@ public class PlatformScript : MonoBehaviour
                 scriptMovimiento.isMoving = false;
                 audioPuerta.PlayOneShot(audioPuerta.clip);
                 landingSound.Play();
+            }else if(this.gameObject.tag != "FinalPlatform"){
+                landingSound.Play();
             }
         }
     }
