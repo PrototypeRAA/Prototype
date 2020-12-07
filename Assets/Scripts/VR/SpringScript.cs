@@ -38,6 +38,6 @@ public class SpringScript : MonoBehaviour
     public async void PlayLandingSound(){
         Task waitToPlayLandingSound =  Task.Delay((int)1 * 1000);
         await waitToPlayLandingSound;
-        audioSpring.PlayOneShot(landingSound, 0.8f);
+        audioSpring.PlayOneShot(landingSound, 1f);
     }
 }
