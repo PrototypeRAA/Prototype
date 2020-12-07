@@ -27,6 +27,7 @@ TagManager:
   - PrismObject
   - FinalPlatform
   - DoorRoom2Level2
+  - DoorRoom3Level2
   layers:
   - Default
   - TransparentFX
