@@ -16,6 +16,8 @@ public class HoleLevel2Script : AbstractInteractable
 
     private AudioSource audioPuerta;
 
+    public AudioSource audioHole;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,6 @@ public class HoleLevel2Script : AbstractInteractable
         player = GameObject.FindWithTag("Player");
         isActivated = false;
         audioPuerta = doorRoom1Level2.GetComponent<AudioSource>();
-
     }
 
        public override void HaSidoMirado()
@@ -31,6 +32,7 @@ public class HoleLevel2Script : AbstractInteractable
         InventarioScript inventario = player.GetComponent<InventarioScript>();
         if(inventario.objetoEnInventario != null){
             if(inventario.objetoEnInventario.tag == this.gameObject.tag){
+                audioHole.PlayOneShot(audioHole.clip);
                 isActivated = true;
                 GameObject objetoADuplicar = inventario.objetoEnInventario;
                 GameObject copiaObjeto = Instantiate(objetoADuplicar);

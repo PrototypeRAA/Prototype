@@ -16,6 +16,8 @@ public class SpherePlaneScript : MonoBehaviour
 
     private AudioSource audioPuerta;
 
+    public AudioSource audioHole;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class SpherePlaneScript : MonoBehaviour
         if(col.tag == this.gameObject.tag){
             isActivated = true;
             CheckForRoomSolved();
+            audioHole.PlayOneShot(audioHole.clip);
         }
     }
 

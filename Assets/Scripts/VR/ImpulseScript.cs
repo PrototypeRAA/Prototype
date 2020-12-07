@@ -18,8 +18,6 @@ public class ImpulseScript : MonoBehaviour
             float cameraValueX = Camera.main.transform.forward.x;
             float cameraValueZ = Camera.main.transform.forward.z;
             Vector3 springImpulse = new Vector3(cameraValueX, 5.0f, cameraValueZ);
-            Debug.Log(cameraValueX);
-            Debug.Log(cameraValueZ);
             player.GetComponent<Rigidbody>().AddForce(springImpulse, ForceMode.Impulse);
         }
     }

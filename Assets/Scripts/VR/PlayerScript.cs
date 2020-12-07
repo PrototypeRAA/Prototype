@@ -29,12 +29,27 @@ public class PlayerScript : MonoBehaviour
         yield return new WaitUntil(()=> blackImage.color.a == 0);
     }
 
+    IEnumerator FadeOut(){
+       anim.SetBool("fadeOut", true);
+       yield return new WaitUntil(()=> blackImage.color.a == 1);
+    }
+
+
     public async void GameOver(){
         gameOverAudio.PlayOneShot(gameOverAudio.clip);
         StartCoroutine(FadeOut());
         Task waitForSceneReload =  Task.Delay(2000);
         await waitForSceneReload;
         SceneManager.LoadScene("Nivel 1");
+    }
+
+    
+    public async void GameOverLevel2(){
+        gameOverAudio.PlayOneShot(gameOverAudio.clip);
+        StartCoroutine(FadeOut());
+        Task waitForSceneReload =  Task.Delay(2000);
+        await waitForSceneReload;
+        SceneManager.LoadScene("Nivel 2");
     }
 
     public async void TransitionToNextLevel(){
@@ -44,10 +59,6 @@ public class PlayerScript : MonoBehaviour
         SceneManager.LoadScene("Nivel 2");
     }
 
-   IEnumerator FadeOut(){
-       anim.SetBool("fadeOut", true);
-       yield return new WaitUntil(()=> blackImage.color.a == 1);
-    }
 
 
 

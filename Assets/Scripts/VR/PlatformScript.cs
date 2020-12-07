@@ -7,9 +7,12 @@ public class PlatformScript : MonoBehaviour
 
     public AudioSource landingSound;
 
+    private bool isActivated = false;
+
     public void OnTriggerEnter(Collider col){
         if(col.tag == "Player"){
-            if(this.gameObject.tag == "FinalPlatform"){
+            if(this.gameObject.tag == "FinalPlatform" && !isActivated){
+                isActivated = true;
                 GameObject player = GameObject.FindWithTag("Player");
                 GameObject doorRoom2Level2 = GameObject.FindWithTag("DoorRoom2Level2");
                 AudioSource audioPuerta = doorRoom2Level2.GetComponent<AudioSource>();
@@ -19,8 +22,8 @@ public class PlatformScript : MonoBehaviour
                 Movimiento scriptMovimiento = player.GetComponent<Movimiento>();
                 scriptMovimiento.isMoving = false;
                 audioPuerta.PlayOneShot(audioPuerta.clip);
+                landingSound.Play();
             }
-            landingSound.Play();
         }
     }
 }
