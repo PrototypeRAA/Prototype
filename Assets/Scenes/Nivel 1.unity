@@ -6372,7 +6372,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 334071689}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.6590195}
@@ -6388,18 +6387,6 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &334071692
 MeshRenderer:
-=======
-  m_GameObject: {fileID: 919132148708434030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5d870ad357d94508aac2ced3a13124a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objetoMirado: {fileID: 919132148708434030}
-  inventarioVacio: 0
---- !u!114 &247834502
-MonoBehaviour:
->>>>>>> parent of bfcedf5... Cambiada posición del techo sala 5 nivel 1 (no se podía avanzar)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16020,135 +16007,7 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ab0a1e2505ceea84abae3c7a13f91023,
     type: 3}
-<<<<<<< HEAD
   m_PrefabInstance: {fileID: 783494362}
-=======
-  m_PrefabInstance: {fileID: 1366636361}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1367347880
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1367347881}
-  m_Layer: 0
-  m_Name: SalaFinal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1367347881
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367347880}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 87.6, y: 7.92, z: -2.3339453}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1749506554}
-  - {fileID: 215574243}
-  - {fileID: 43748760}
-  - {fileID: 1333022244}
-  - {fileID: 1230233581}
-  - {fileID: 973202395}
-  - {fileID: 1017719416}
-  - {fileID: 1861437482}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1368489181 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bbb270cac7675f04191a902054fa751c,
-    type: 3}
-  m_PrefabInstance: {fileID: 307351732}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1368489182
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1368489181}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.6193748, y: 0.1329159, z: 2.629642}
-  m_Center: {x: 0.30968708, y: 0.06875273, z: 0.0000012514449}
---- !u!1 &1369935259
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1369935260}
-  - component: {fileID: 1369935261}
-  m_Layer: 0
-  m_Name: Roof
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1369935260
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369935259}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.32, y: 7.17, z: 10.283945}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1777440601}
-  - {fileID: 1149622865}
-  - {fileID: 1754546908}
-  - {fileID: 1773827379}
-  - {fileID: 1443189883}
-  - {fileID: 1562172601}
-  - {fileID: 1623008439}
-  - {fileID: 1061133947}
-  - {fileID: 1370329805}
-  - {fileID: 1855659395}
-  - {fileID: 1924363154}
-  - {fileID: 2141222856}
-  - {fileID: 1932555555}
-  - {fileID: 1073106752}
-  - {fileID: 349620277}
-  - {fileID: 1093140205}
-  - {fileID: 1738585325}
-  - {fileID: 268104605}
-  - {fileID: 60796039}
-  - {fileID: 514026585}
-  - {fileID: 573949609}
-  - {fileID: 763483874}
-  - {fileID: 63891691}
-  - {fileID: 544314857}
-  - {fileID: 58332745}
-  - {fileID: 917132005}
-  - {fileID: 137811328}
-  - {fileID: 78056712}
-  - {fileID: 1570488240}
-  - {fileID: 1335071144}
-  m_Father: {fileID: 174758770}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1369935261
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
->>>>>>> parent of bfcedf5... Cambiada posición del techo sala 5 nivel 1 (no se podía avanzar)
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &801534998
 PrefabInstance:
@@ -43151,7 +43010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d870ad357d94508aac2ced3a13124a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoMirado: {fileID: 919132148034283313}
   inventarioVacio: 0
 --- !u!114 &919132148034283316
 MonoBehaviour:
@@ -43555,7 +43413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d870ad357d94508aac2ced3a13124a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoMirado: {fileID: 919132148435008971}
   inventarioVacio: 0
 --- !u!114 &919132148435008974
 MonoBehaviour:
