@@ -64,7 +64,7 @@ public class HoleLevel2Script : AbstractInteractable
 
     private void OpenDoorRoom1(){
         InventarioScript inventario = player.GetComponent<InventarioScript>();
-        inventario.CambiarTexto("Sala 3 superada!");
+        inventario.CambiarTexto("Sala 1 superada!");
         doorRoom1Level2.transform.Rotate(0, 0, -90);
         Movimiento scriptMovimiento = player.GetComponent<Movimiento>();
         scriptMovimiento.isMoving = false;

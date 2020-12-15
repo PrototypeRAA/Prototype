@@ -48,6 +48,7 @@ public class Hole2L3Script : AbstractInteractable
             Destroy(colliderBox);
             GvrPointerGraphicRaycaster gaze = copiaCubo.GetComponent<GvrPointerGraphicRaycaster>();
             Destroy(gaze);
+            inventario.objetoEnInventario = null;
         }
     }
 
